@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angu
 import { Subject } from 'rxjs';
 import { FormControl, NgModel } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
-import { MatCheckboxChange } from '@angular/material';
+import { MatCheckboxChange, MatOption } from '@angular/material';
 
 
 
@@ -14,6 +14,7 @@ import { MatCheckboxChange } from '@angular/material';
 export class CustomMatSelectComponent implements OnInit {
 
   @ViewChild('select',{static: false}) select:any;  
+  @ViewChild('allSelected', {static: false}) allSelected:MatOption;
   destroy$: Subject<boolean> = new Subject<boolean>();
   selectCtrl: FormControl = new FormControl();
   selectFilterCtrl: FormControl = new FormControl();
@@ -111,9 +112,6 @@ export class CustomMatSelectComponent implements OnInit {
   }
 
   isChecked(): boolean {
-    console.log(this.selectCtrl.value && this.options.length
-      && this.selectCtrl.value.length === this.options.length);
-    
     return this.selectCtrl.value && this.options.length
       && this.selectCtrl.value.length === this.options.length;
   }
@@ -124,7 +122,7 @@ export class CustomMatSelectComponent implements OnInit {
   }
   
 
-  toggleSelection(change: MatCheckboxChange): void {    
+  toggleAllSelection(change: MatCheckboxChange): void { 
     if (change.checked) {
       this.selectCtrl.setValue(this.options);
     } else {

@@ -6,21 +6,21 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './angularMaterial.module';
 import { CustomMatSelectComponent } from './custom-mat-select/custom-mat-select.component';
-import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomMatSelectComponent
+    CustomMatSelectComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule,
-    NgxMatSelectSearchModule,
     FormsModule,
     ReactiveFormsModule
   ],
