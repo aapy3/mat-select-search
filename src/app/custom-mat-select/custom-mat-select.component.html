@@ -10,8 +10,6 @@
         <ngx-mat-select-search [formControl]="selectFilterCtrl" [placeholderLabel]="'Search'"
           [noEntriesFoundLabel]="'No match found'"></ngx-mat-select-search>
       </mat-option>
-      <!-- <nitrozen-select-check-all *ngIf="isMultiple" [text]="''" [model]="selectCtrl" [values]="options" (change)="selectAllChanged($event)">
-      </nitrozen-select-check-all> -->
 
       <mat-checkbox class="mat-option" [formControl]="selectCtrl" [indeterminate]="isIndeterminate()"
         [checked]="isChecked()" (click)="$event.stopPropagation()" (change)="toggleSelection($event)">
